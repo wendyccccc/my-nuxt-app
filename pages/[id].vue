@@ -9,5 +9,10 @@ console.log('Dynamic route page loaded');
 // nuxt2: /pages/_id.vue
 // nuxt3: /pages/[id].vue
 
-const route = useRoute(); // auto imported 跟vue有關的api都可以直接使用
+const $route = useRoute(); // auto imported 跟vue有關的api都可以直接使用
+onMounted(() => {
+    setInterval(() => {
+        console.log('Current ID:', $route.params.id);
+    }, 1000);
+})
 </script>
